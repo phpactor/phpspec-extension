@@ -12,6 +12,7 @@ Features
 
 Todo:
 
+- [ ] Add `MethodProphecy` type to method calls on collaborators.
 - [ ] Adds the `Collaborator` type to collaborators.
 - [ ] Generate specs.
 
