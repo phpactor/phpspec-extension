@@ -13,8 +13,10 @@ Features
 Todo:
 
 - [ ] Add `MethodProphecy` type to method calls on collaborators.
+- [ ] Add Subject type to return types.
 - [ ] Adds the `Collaborator` type to collaborators.
-- [ ] Generate specs.
+- [ ] Class generator for class.
+- [ ] Initialize parameters from `.phpspec.yml`
 
 Installation
 ============
@@ -22,3 +24,25 @@ Installation
 ```
 $ /path/to/your/phpactor extension:install phpactor/phpspec-extension
 ```
+
+Tips and Tricks
+===============
+
+## Test Navigation
+
+Phpactor allows you to jump to related files, just add the following
+[configuration](https://phpactor.github.io/phpactor/configuration.html) to
+jump from your standard source code to the test:
+
+```javascript
+{
+    "navigator.destinations": {
+        "source": "lib\/<kernel>Test.php"
+        "spec": "spec\/<kernel>Spec.php"
+    },
+}
+```
+
+See [Jump to related
+file](https://phpactor.github.io/phpactor/navigation.html#jump-to-or-generate-related-file)
+for more information.
