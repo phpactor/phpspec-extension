@@ -2,13 +2,10 @@
 
 namespace Phpactor\Extension\PhpSpec\Tests\Unit\MethodProvider;
 
-use PHPUnit\Framework\TestCase;
 use PhpSpec\Wrapper\Subject;
 use Phpactor\Extension\PhpSpec\Tests\PhpSpecTestCase;
 use Phpactor\Extension\WorseReflection\WorseReflectionExtension;
 use Phpactor\WorseReflection\Core\Reflector\ClassReflector;
-use Phpactor\WorseReflection\ReflectorBuilder;
-use Prophecy\Prophecy\ObjectProphecy;
 use spec\Phpactor\Extension\PhpSpec\Tests\Example\ExampleSpec;
 
 class ObjectBehaviorProviderTest extends PhpSpecTestCase

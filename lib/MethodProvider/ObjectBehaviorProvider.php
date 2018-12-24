@@ -2,20 +2,17 @@
 
 namespace Phpactor\Extension\PhpSpec\MethodProvider;
 
-use PhpSpec\ObjectBehavior;
 use PhpSpec\Wrapper\Subject;
 use Phpactor\WorseReflection\Core\ClassName;
 use Phpactor\WorseReflection\Core\Exception\NotFound;
 use Phpactor\WorseReflection\Core\Reflection\Collection\ReflectionMethodCollection;
 use Phpactor\WorseReflection\Core\Reflection\ReflectionClassLike;
-use Phpactor\WorseReflection\Core\Reflector\ClassReflector;
 use Phpactor\WorseReflection\Core\ServiceLocator;
 use Phpactor\WorseReflection\Core\Type;
 use Phpactor\WorseReflection\Core\Types;
 use Phpactor\WorseReflection\Core\Virtual\Collection\VirtualReflectionMethodCollection;
 use Phpactor\WorseReflection\Core\Virtual\ReflectionMethodProvider;
 use Phpactor\WorseReflection\Core\Virtual\VirtualReflectionMethod;
-use Prophecy\Prophecy\ObjectProphecy;
 
 class ObjectBehaviorProvider implements ReflectionMethodProvider
 {
@@ -35,8 +32,7 @@ class ObjectBehaviorProvider implements ReflectionMethodProvider
     public function provideMethods(
         ServiceLocator $serviceLocator,
         ReflectionClassLike $class
-    ): ReflectionMethodCollection
-    {
+    ): ReflectionMethodCollection {
         $subjectClassName = explode('\\', $class->name()->namespace());
 
         if (false === $this->isSpecCandidate($class, $subjectClassName)) {
