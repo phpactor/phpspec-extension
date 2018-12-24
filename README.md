@@ -5,6 +5,8 @@ PhpSpec Extension
 
 Phpspec support for Phpactor.
 
+![recording](https://user-images.githubusercontent.com/530801/50404106-00ba1b00-079c-11e9-917c-846bb56fdeb2.gif)
+
 Features
 ========
 

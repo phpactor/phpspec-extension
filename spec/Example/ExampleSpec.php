@@ -11,6 +11,5 @@ class ExampleSpec extends ObjectBehavior
 {
     function it_is_initializable(Goodbye $bar)
     {
-        $this->hello()->shouldBeAnInstanceOf(Foobar::class);
     }
 }
