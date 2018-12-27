@@ -1,20 +1,21 @@
 <?php
 
-namespace Phpactor\Extension\PhpSpec\MethodProvider;
+namespace Phpactor\Extension\PhpSpec\MemberProvider;
 
 use PhpSpec\Wrapper\Subject;
 use Phpactor\WorseReflection\Core\ClassName;
 use Phpactor\WorseReflection\Core\Exception\NotFound;
-use Phpactor\WorseReflection\Core\Reflection\Collection\ReflectionMethodCollection;
+use Phpactor\WorseReflection\Core\Reflection\Collection\ReflectionMemberCollection;
 use Phpactor\WorseReflection\Core\Reflection\ReflectionClassLike;
 use Phpactor\WorseReflection\Core\ServiceLocator;
 use Phpactor\WorseReflection\Core\Type;
 use Phpactor\WorseReflection\Core\Types;
+use Phpactor\WorseReflection\Core\Virtual\Collection\VirtualReflectionMemberCollection;
 use Phpactor\WorseReflection\Core\Virtual\Collection\VirtualReflectionMethodCollection;
-use Phpactor\WorseReflection\Core\Virtual\ReflectionMethodProvider;
+use Phpactor\WorseReflection\Core\Virtual\ReflectionMemberProvider;
 use Phpactor\WorseReflection\Core\Virtual\VirtualReflectionMethod;
 
-class ObjectBehaviorProvider implements ReflectionMethodProvider
+class ObjectBehaviorProvider implements ReflectionMemberProvider
 {
     const CLASS_OBJECT_BEHAVIOR = 'PhpSpec\\ObjectBehavior';
     const SPEC_SUFFIX = 'Spec';
@@ -29,14 +30,14 @@ class ObjectBehaviorProvider implements ReflectionMethodProvider
         $this->specPrefix = $specPrefix;
     }
 
-    public function provideMethods(
+    public function provideMembers(
         ServiceLocator $serviceLocator,
         ReflectionClassLike $class
-    ): ReflectionMethodCollection {
+    ): ReflectionMemberCollection {
         $subjectClassName = explode('\\', $class->name()->namespace());
 
         if (false === $this->isSpecCandidate($class, $subjectClassName)) {
-            return VirtualReflectionMethodCollection::fromReflectionMethods([]);
+            return VirtualReflectionMemberCollection::fromMembers([]);
         }
 
         array_shift($subjectClassName);
@@ -70,7 +71,7 @@ class ObjectBehaviorProvider implements ReflectionMethodProvider
             $virtualMethods[] = $method;
         }
 
-        return VirtualReflectionMethodCollection::fromReflectionMethods($virtualMethods);
+        return VirtualReflectionMemberCollection::fromMembers($virtualMethods);
     }
 
     private function isSpecCandidate(ReflectionClassLike $class, array $subjectClassName): bool
