@@ -16,7 +16,7 @@ class PhpSpecExtension implements Extension
     /**
      * {@inheritDoc}
      */
-    public function load(ContainerBuilder $container)
+    public function load(ContainerBuilder $container): void
     {
         $container->register('phpspec.method_provider', function (Container $container) {
             return new ObjectBehaviorProvider($container->getParameter(self::PARAM_SPEC_PREFIX));
@@ -26,7 +26,7 @@ class PhpSpecExtension implements Extension
     /**
      * {@inheritDoc}
      */
-    public function configure(Resolver $schema)
+    public function configure(Resolver $schema): void
     {
         $schema->setDefaults([
             self::PARAM_SPEC_PREFIX => 'spec',
