@@ -1,7 +1,7 @@
 PhpSpec Extension
 =================
 
-[![Build Status](https://travis-ci.org/phpactor/phpspec-extension.svg?branch=master)](https://travis-ci.org/phpactor/phpspec-extension)
+![CI](https://github.com/phpactor/phpspec-extension/workflows/CI/badge.svg)
 
 Phpspec support for Phpactor.
 
