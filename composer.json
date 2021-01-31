@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "phpactor/container": "^1.0",
-        "phpactor/worse-reflection-extension": "~0.1",
-        "php": "^7.3"
+        "phpactor/container": "dev-maestro-php8",
+        "phpactor/worse-reflection-extension": "dev-maestro-php8",
+        "php": "^7.3 || ^8.0"
     },
     "require-dev": {
         "phpstan/phpstan": "~0.12.0",
