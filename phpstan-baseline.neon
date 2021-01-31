@@ -1,0 +1,12 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$reflectionMethod of static method Phpactor\\\\WorseReflection\\\\Core\\\\Virtual\\\\VirtualReflectionMethod\\:\\:fromReflectionMethod\\(\\) expects Phpactor\\\\WorseReflection\\\\Core\\\\Reflection\\\\ReflectionMethod, Phpactor\\\\WorseReflection\\\\Core\\\\Reflection\\\\ReflectionMember given\\.$#"
+			count: 1
+			path: lib/MemberProvider/ObjectBehaviorProvider.php
+
+		-
+			message: "#^Method Phpactor\\\\Extension\\\\PhpSpec\\\\MemberProvider\\\\ObjectBehaviorProvider\\:\\:isSpecCandidate\\(\\) has parameter \\$subjectClassName with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/MemberProvider/ObjectBehaviorProvider.php
+

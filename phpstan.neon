@@ -1,4 +1,6 @@
 parameters:
-    paths: [ lib ]
-    ignoreErrors:
-        - '#Static call to instance method .*::fromString()#'
+    paths:
+        - lib
+    level: 7
+includes:
+    - phpstan-baseline.neon
